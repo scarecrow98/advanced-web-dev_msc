@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(payload: LoginSubmitPayload) {
-    this.authService.check();
     this.authService.login(payload.email, payload.password).subscribe(success => {
       if (success) {
         this.messageService.success('Login successful');

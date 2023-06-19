@@ -1,0 +1,18 @@
+<div class="instructors-component content">
+  <nav class="content-toolbar">
+    <app-typeahead-filter
+      [placeholder]="'Type to search...'"
+      (onFilter)="filterInstructors($event)"></app-typeahead-filter>
+
+    <button nz-button nzType="primary" (click)="newInstructor()">
+      <span nz-icon nzType="plus-circle"></span>
+      New Instructor
+    </button>
+  </nav>
+  <main class="instructors-content">
+      <app-instructor-list
+        [data]="(filteredInstructors$ | async)!"
+        (onEdit)="editInstructor($event)">
+      </app-instructor-list>
+  </main>
+</div>

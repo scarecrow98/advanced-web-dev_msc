@@ -1,0 +1,13 @@
+<div class="dashboard-component">
+  <aside class="dashboard-menu">
+   <app-dashboard-menu (onLogout)="logout()"></app-dashboard-menu>
+  </aside>
+
+  <header class="dashboard-header">
+    <app-dashboard-header [title]="(title$ | async) || ''" [user]="authService.user$ | async"></app-dashboard-header>
+  </header>
+
+  <main class="dashboard-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

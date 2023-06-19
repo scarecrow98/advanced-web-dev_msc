@@ -1,0 +1,35 @@
+<div class="semester-edit-component">
+  <form nz-form [formGroup]="form" class="form-panel" (ngSubmit)="submit()">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="semester-name">Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="semester-name" formControlName="name">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-code">Start Date</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-date-picker formControlName="startDate"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-code">End Date</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-date-picker formControlName="endDate"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item >
+
+    <div class="button-group">
+      <button nz-button nzBlock (click)="cancel()" type="reset">
+        Cancel
+      </button>
+      <button nz-button nzType="primary" nzBlock type="submit">
+        <span nz-icon nzType="save" nzTheme="outline"></span>
+        Save Semester
+      </button>
+    </div>
+  </form>
+</div>

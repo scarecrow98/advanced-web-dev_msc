@@ -1,0 +1,27 @@
+.dashboard-component {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr;
+  grid-template-areas: 'menu header' 'menu content';
+
+  .dashboard-menu {
+    grid-area: menu;
+    // background-color: red;
+
+
+    .menu-title {
+      padding: 20px;
+    }
+  }
+
+  .dashboard-header {
+    grid-area: header;
+    // background-color: blue;
+  }
+
+  .dashboard-content {
+    grid-area: content;
+    // background-color: orange;
+  }
+}

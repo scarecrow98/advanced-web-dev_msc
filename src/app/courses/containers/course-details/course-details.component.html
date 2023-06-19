@@ -1,0 +1,6 @@
+<div class="course-details-component">
+  <app-course-edit
+    [course]="course$ | async"
+    (onSave)="saveCourse($event)"
+    (onCancel)="cancelEdit()"></app-course-edit>
+</div>

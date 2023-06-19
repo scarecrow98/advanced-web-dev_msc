@@ -1,0 +1,15 @@
+.semesters-component {
+
+  .semesters-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    &.edit-mode {
+      grid-template-columns: 1fr 400px;
+    }
+
+    .semester-list {
+      padding-right: 40px;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<div class="student-edit-component">
+  <form nz-form [formGroup]="form" class="form-panel" (ngSubmit)="submit()">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-name">Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="student-name" formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-email">Email</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="student-email" formControlName="email">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-birthdate">Date of Birth</nz-form-label>
+      <nz-date-picker id="student-birthdate" formControlName="birthDate"></nz-date-picker>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-neptun-code">Neptun Code</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="student-neptun-code" formControlName="neptunCode">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-major">Major</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="student-major" formControlName="major">
+          <nz-option
+            *ngFor="let major of studentMajors"
+            [nzValue]="major"
+            [nzLabel]="major"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="student-password">Password</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="student-password" formControlName="password">
+      </nz-form-control>
+    </nz-form-item >
+
+
+    <div class="button-group">
+      <button nz-button nzBlock (click)="cancel()" type="reset">
+        Cancel
+      </button>
+      <button nz-button nzType="primary" nzBlock type="submit">
+        <span nz-icon nzType="save" nzTheme="outline"></span>
+        Save Student
+      </button>
+    </div>
+  </form>
+</div>

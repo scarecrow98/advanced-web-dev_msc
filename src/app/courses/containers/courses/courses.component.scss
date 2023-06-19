@@ -1,0 +1,15 @@
+.courses-component {
+
+  .courses-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    &.edit-mode {
+      grid-template-columns: 1fr 400px;
+    }
+
+    .course-list {
+      padding-right: 40px;
+    }
+  }
+}

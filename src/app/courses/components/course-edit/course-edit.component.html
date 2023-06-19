@@ -1,0 +1,46 @@
+<div class="course-edit-component">
+  <form nz-form [formGroup]="form" class="form-panel" (ngSubmit)="submit()">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-name">Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="course-name" formControlName="name">
+      </nz-form-control>
+    </nz-form-item >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-code">Code</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="course-code" formControlName="code">
+      </nz-form-control>
+    </nz-form-item >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-credit-score">Credit score</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-input-number
+          id="course-credit-score"
+          style="width: 100%"
+          formControlName="creditScore"></nz-input-number>
+      </nz-form-control>
+    </nz-form-item >
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="course-department">Department</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="course-department" formControlName="department">
+          <nz-option
+            *ngFor="let department of departments"
+            [nzValue]="department"
+            [nzLabel]="department"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+    <div class="button-group">
+      <button nz-button nzBlock (click)="cancel()" type="reset">
+        Cancel
+      </button>
+      <button nz-button nzType="primary" nzBlock type="submit">
+        <span nz-icon nzType="save" nzTheme="outline"></span>
+        Save Course
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="instructor-details-component content split-content" *ngIf="instructor$ | async as instructor">
+  <div class="instructor-edit">
+    <app-instructor-edit
+      [instructor]="instructor"
+      (onCancel)="cancelEdit()"
+      (onSave)="saveInstructor($event)"></app-instructor-edit>
+  </div>
+  <div>
+    <app-user-course-list-editor
+      [semesters]="(semesters$ | async)!"
+      [courses]="(courses$ | async)!"
+      [userCourses]="(instructorCourses$ | async)!"
+      (onAddCourse)="addInstructorCourse($event)"
+      (onDeleteCourse)="deleteInstructorCourse($event)"
+      (onFilter)="filterInstructorCourses($event)"></app-user-course-list-editor>
+  </div>
+</div>

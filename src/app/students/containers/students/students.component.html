@@ -1,0 +1,18 @@
+<div class="students-component content">
+  <nav class="content-toolbar">
+    <app-typeahead-filter
+      [placeholder]="'Type to search...'"
+      (onFilter)="filterStudents($event)"></app-typeahead-filter>
+
+    <button nz-button nzType="primary" (click)="newStudent()">
+      <span nz-icon nzType="plus-circle"></span>
+      New Student
+    </button>
+  </nav>
+  <main class="students-content">
+      <app-student-list
+        [data]="(filteredStudents$ | async)!"
+        (onEdit)="editStudent($event)">
+      </app-student-list>
+  </main>
+</div>

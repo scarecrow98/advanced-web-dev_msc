@@ -1,0 +1,30 @@
+<div class="add-course-form">
+  <form nz-form [formGroup]="form">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-course">Course</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="instructor-course" formControlName="courseId">
+          <nz-option
+            *ngFor="let course of courses"
+            [nzValue]="course.id"
+            [nzLabel]="course.name + ' [' + course.code + ']'"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-semester">Semester</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="instructor-semester" formControlName="semesterId">
+          <nz-option
+            *ngFor="let semester of semesters"
+            [nzValue]="semester.id"
+            [nzLabel]="semester.name"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<div class="courses-component content">
+  <nav class="content-toolbar">
+    <app-typeahead-filter
+      [placeholder]="'Type to search...'"
+      (onFilter)="filterCourses($event)"></app-typeahead-filter>
+
+    <button nz-button nzType="primary" (click)="newCourse()">
+      <span nz-icon nzType="plus-circle"></span>
+      New Course
+    </button>
+  </nav>
+  <main class="courses-content" [class.edit-mode]="isEditMode">
+    <div class="course-list">
+      <app-course-list
+        [data]="(filteredCourses$ | async)!"
+        (onEdit)="editCourse($event)">
+      </app-course-list>
+    </div>
+     
+    <div class="course-details">
+      <router-outlet (activate)="onEditBegin()" (deactivate)="onEditEnd()"></router-outlet>
+    </div>
+  </main>
+</div>

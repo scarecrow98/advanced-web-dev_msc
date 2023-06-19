@@ -1,0 +1,72 @@
+<div class="instructor-edit-component">
+  <form nz-form [formGroup]="form" class="form-panel" (ngSubmit)="submit()">
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-name">Name</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="instructor-name" formControlName="name">
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-email">Email</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="instructor-email" formControlName="email">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-birthdate">Date of Birth</nz-form-label>
+      <nz-date-picker id="instructor-birthdate" formControlName="birthDate"></nz-date-picker>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-neptun-code">Neptun Code</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="instructor-neptun-code" formControlName="neptunCode">
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-department">Department</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="instructor-department" formControlName="department">
+          <nz-option
+            *ngFor="let department of departments"
+            [nzValue]="department"
+            [nzLabel]="department"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-status">Status</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <nz-select id="instructor-status" formControlName="status">
+          <nz-option
+            *ngFor="let status of instructorStatuses"
+            [nzValue]="status"
+            [nzLabel]="status"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item >
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="6" nzFor="instructor-password">Password</nz-form-label>
+      <nz-form-control [nzSpan]="14">
+        <input nz-input type="text" id="instructor-password" formControlName="password">
+      </nz-form-control>
+    </nz-form-item >
+
+
+    <div class="button-group">
+      <button nz-button nzBlock (click)="cancel()" type="reset">
+        Cancel
+      </button>
+      <button nz-button nzType="primary" nzBlock type="submit">
+        <span nz-icon nzType="save" nzTheme="outline"></span>
+        Save Instructor
+      </button>
+    </div>
+  </form>
+</div>

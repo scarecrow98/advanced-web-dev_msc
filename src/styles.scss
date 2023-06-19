@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+.content {
+  padding: 30px;
+}
+
+.split-content {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 30px;
+}
+
+.content-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.form-panel {
+  padding: 24px;
+  background: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}

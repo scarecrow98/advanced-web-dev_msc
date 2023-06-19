@@ -1,0 +1,31 @@
+<div class="dashboard-menu-component">
+  <h1 class="menu-title">Demo App</h1>
+
+  <nz-divider></nz-divider>
+
+  <ul nz-menu nzMode="inline">
+    <li nz-menu-item routerLink="instructors" nzMatchRouter>
+      <span nz-icon nzType="user" nzTheme="outline"></span>
+      <span>Instructors</span>
+    </li>
+    <li nz-menu-item routerLink="students" nzMatchRouter>
+      <span nz-icon nzType="user" nzTheme="outline"></span>
+      <span>Students</span>
+    </li>
+    <li nz-menu-item routerLink="courses" nzMatchRouter>
+      <span nz-icon nzType="book" nzTheme="outline"></span>
+      <span>Courses</span>
+    </li>
+    <li nz-menu-item routerLink="semesters" nzMatchRouter>
+      <span nz-icon nzType="calendar" nzTheme="outline"></span>
+      <span>Semesters</span>
+    </li>
+
+    <nz-divider></nz-divider>
+
+    <li nz-menu-item (click)="onLogout.emit(true)">
+      <span nz-icon nzType="logout" nzTheme="outline"></span>
+      <span>Logout</span>
+    </li>
+  </ul>
+</div>

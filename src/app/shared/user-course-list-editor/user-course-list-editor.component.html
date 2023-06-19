@@ -1,0 +1,23 @@
+<div class="user-course-list-editor">
+  <div class="content-toolbar">
+    <nz-form-item>
+      <nz-form-label>Filter by semester</nz-form-label>
+      <nz-select style="width: 150px;" [(ngModel)]="filterSemester" (ngModelChange)="onFilter.emit(filterSemester)">
+        <nz-option
+          *ngFor="let semester of semesters"
+          [nzValue]="semester"
+          [nzLabel]="semester.name"></nz-option>
+      </nz-select>
+    </nz-form-item>
+
+    <button nz-button nzType="primary" (click)="openAddCourseForm()">
+      <span nz-icon nzType="plus"></span>
+      Assign Course
+    </button>
+  </div>
+  <div class="user-course-list">
+    <app-user-course-list
+      [data]="userCourses"
+      (onDelete)="onDeleteCourseEvent($event)"></app-user-course-list>
+  </div>
+</div>

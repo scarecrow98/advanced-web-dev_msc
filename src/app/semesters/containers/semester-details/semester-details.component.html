@@ -1,0 +1,6 @@
+<div class="semester-details-component">
+  <app-semester-edit
+    [semester]="semester$ | async"
+    (onSave)="saveSemester($event)"
+    (onCancel)="cancelEdit()"></app-semester-edit>
+</div>
